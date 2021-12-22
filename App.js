@@ -1,67 +1,67 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, StatusBar, Text, View } from 'react-native';
-import { Accelerometer } from 'expo-sensors';
+import React, { useState, useEffect, Component } from 'react';
+import { View, Text, StyleSheet, Button, StatusBar, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AccelerometerScreen from './Accelerometer';
+
+function HomeScreen({ navigation }) {
+    return (
+        <View style={styles.HomeContainer}>
+            <Text style={styles.HomeText}>
+                Please select a sensor:
+            </Text>
+            <TouchableOpacity style={styles.Button}
+                onPress={() => navigation.navigate('Accelerometer')}>
+                <Text style={styles.ButtonText}>Accelerometer</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.Button}
+                onPress={() => navigation.navigate('Barometer')}>
+                <Text style={styles.ButtonText}>Barometer</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.Button}
+                onPress={() => navigation.navigate('Magnometer')}>
+                <Text style={styles.ButtonText}>Magnometer</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.Button}
+                onPress={() => navigation.navigate('Pedometer')}>
+                <Text style={styles.ButtonText}>Pedometer</Text>
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+const Stack = createNativeStackNavigator()
 
 export default function App() {
-
-    const [data, setData] = useState({
-        x: 0,
-        y: 0,
-        z: 0,
-    });
-
-    const [subscription, setSubscription] = useState(null);
-
-    const _subscribe = () => {
-        setSubscription(
-            Accelerometer.addListener(accelerometerData => {
-                setData(accelerometerData);
-            })
-        );
-    };
-
-    const _unsubscribe = () => {
-        subscription && subscription.remove();
-        setSubscription(null);
-    };
-
-    useEffect(() => {
-        _subscribe();
-        return () => _unsubscribe();
-    }, []);
-
-    const { x, y, z } = data;
-
     return (
-        <View style={styles.container}>
-            <View style={styles.AccelerometerContainer}>
-                <Text style={styles.text}>Accelerometer</Text>
-                <Text style={styles.textValues}>
-                    <Text style={styles.text}>x: {x.toFixed(2)} y: {y.toFixed(2)} z: {z.toFixed(2)}</Text>
-                </Text>
-                <Text style={styles.text}>X Orientation: {(x) > 0.50 ? 'Vertical' : 'Horizontal'}</Text>
-                <Text style={styles.text}>Y Orientation: {(y) > 0.50 ? 'Vertical' : 'Horizontal'}</Text>
-                <Text style={styles.text}>Z Orientation: {(z) > 0 ? 'Facing Up' : 'Facing Down'}</Text>
-            </View>
-        </View>
-    );
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName='Home'>
+                <Stack.Screen name="Home - Group 4 (Sensors)" component={HomeScreen} />
+                <Stack.Screen name="Accelerometer" component={AccelerometerScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        paddingTop: (StatusBar.currentHeight),
-        flex: 1,
+    HomeContainer: {
+        marginHorizontal: 20,
+        flexDirection: "column",
     },
-    text: {
+    HomeText: {
+        paddingVertical: 20,
         fontSize: 20
     },
-    textValues: {
-        flexDirection: 'column'
-    },
-    AccelerometerContainer: {
-        flex: 1,
+    Button: {
         alignItems: 'center',
-        flexDirection: 'column',
         justifyContent: 'center',
+        paddingVertical: 30,
+        marginVertical: 10,
+        backgroundColor: "#3F7EE8",
+        borderRadius: 15
+    },
+    ButtonText: {
+        color: 'white',
+        fontSize: 20
     }
 })
