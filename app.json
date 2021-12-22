@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Sensors",
+    "slug": "Sensors",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "Sensors"
+}
