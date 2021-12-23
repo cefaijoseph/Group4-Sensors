@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AccelerometerScreen from './Accelerometer';
 import BarometerScreen from './Barometer';
+import PedometerScreen from './Pedometer';
 
 function HomeScreen({ navigation }) {
     return (
@@ -40,6 +41,7 @@ export default function App() {
                 <Stack.Screen name="Home - Group 4 (Sensors)" component={HomeScreen} />
                 <Stack.Screen name="Accelerometer" component={AccelerometerScreen} />
                 <Stack.Screen name="Barometer" component={BarometerScreen} />
+                <Stack.Screen name="Pedometer" component={PedometerScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )

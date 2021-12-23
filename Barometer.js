@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, StatusBar, View } from "react-native";
 import { Barometer } from "expo-sensors";
-
 const BarometerScreen = () => {
   const [data, setData] = useState({});
 
