@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, StatusBar, TouchableOpacity } from 'rea
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AccelerometerScreen from './Accelerometer';
+import BarometerScreen from './Barometer';
 
 function HomeScreen({ navigation }) {
     return (
@@ -38,6 +39,7 @@ export default function App() {
             <Stack.Navigator initialRouteName='Home'>
                 <Stack.Screen name="Home - Group 4 (Sensors)" component={HomeScreen} />
                 <Stack.Screen name="Accelerometer" component={AccelerometerScreen} />
+                <Stack.Screen name="Barometer" component={BarometerScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
