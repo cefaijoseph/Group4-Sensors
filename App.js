@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AccelerometerScreen from './Accelerometer';
 import BarometerScreen from './Barometer';
 import PedometerScreen from './Pedometer';
+import CameraScreen from './Camera';
 
 function HomeScreen({ navigation }) {
     return (
@@ -28,6 +29,10 @@ function HomeScreen({ navigation }) {
                 onPress={() => navigation.navigate('Pedometer')}>
                 <Text style={styles.ButtonText}>Pedometer</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.Button}
+                onPress={() => navigation.navigate('Camera')}>
+                <Text style={styles.ButtonText}>Camera</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -42,6 +47,7 @@ export default function App() {
                 <Stack.Screen name="Accelerometer" component={AccelerometerScreen} />
                 <Stack.Screen name="Barometer" component={BarometerScreen} />
                 <Stack.Screen name="Pedometer" component={PedometerScreen} />
+                <Stack.Screen name="Camera" component={CameraScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
