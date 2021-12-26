@@ -41,7 +41,7 @@ const AccelerometerScreen = () => {
                 <Text style={styles.text}>X Orientation: {(x) > 0.50 ? 'Vertical' : 'Horizontal'}</Text>
                 <Text style={styles.text}>Y Orientation:
                     {Platform.OS === "ios"
-                        ? ((y) < 0.50 ? 'Vertical' : 'Horizontal')
+                        ? ((y) < -0.50 ? 'Vertical' : 'Horizontal')
                         : ((y) > 0.50 ? 'Vertical' : 'Horizontal')}</Text>
                 <Text style={styles.text}>Z Orientation:
                     {Platform.OS === "ios"
