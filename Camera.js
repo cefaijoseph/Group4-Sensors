@@ -37,7 +37,7 @@ export default function App() {
       justifyContent: 'space-between',
       width: 80,
       height: 70,
-      bottom: 0,
+      bottom: 50,
       left: 0,
       borderRadius: 50,
       backgroundColor: '#fff'
@@ -55,7 +55,7 @@ export default function App() {
       justifyContent: 'space-between',
       width: 100,
       height: 70,
-      bottom: 0,
+      bottom: 50,
       borderRadius: 50,
       backgroundColor: '#fff'
     },
