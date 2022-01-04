@@ -23,9 +23,8 @@
   - (Windows Only) Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
   - npm install --global expo-cli
   - npm install
-- Download 'Expo Go' from PlayStore (Android) or AppStore (iOS)
-- Open CLI and run:
   - expo start
+- Download 'Expo Go' from PlayStore (Android) or AppStore (iOS)
 - Scan QR Code found in Terminal Window
 
 ## Dependencies
