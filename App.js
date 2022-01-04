@@ -1,12 +1,13 @@
-import React, { useState, useEffect, Component } from 'react';
-import { View, Text, StyleSheet, Button, StatusBar, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AccelerometerScreen from './Accelerometer';
+import MagnetometerScreen from './Magnetometer';
 import BarometerScreen from './Barometer';
 import PedometerScreen from './Pedometer';
 import CameraScreen from './Camera';
-import { AutoFocus } from 'expo-camera/build/Camera.types';
+
 
 function HomeScreen({ navigation }) {
     return (
@@ -21,6 +22,10 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity style={styles.Button}
                 onPress={() => navigation.navigate('Barometer')}>
                 <Text style={styles.ButtonText}>Barometer</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.Button}
+                onPress={() => navigation.navigate('Magnetometer')}>
+                <Text style={styles.ButtonText}>Magnetometer</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Button}
                 onPress={() => navigation.navigate('Pedometer')}>
@@ -42,6 +47,7 @@ export default function App() {
             <Stack.Navigator initialRouteName='Home'>
                 <Stack.Screen name="Home - Group 4 (Sensors)" component={HomeScreen} />
                 <Stack.Screen name="Accelerometer" component={AccelerometerScreen} />
+                <Stack.Screen name="Magnetometer" component={MagnetometerScreen} />
                 <Stack.Screen name="Barometer" component={BarometerScreen} />
                 <Stack.Screen name="Pedometer" component={PedometerScreen} />
                 <Stack.Screen name="Camera" component={CameraScreen} />
