@@ -17,19 +17,19 @@
 
 ## Installation / Setup Guide
 
-- Clone/download this repository (cefaijoseph/Group4-Sensors)
-- Open the project directory in your preferred ID (e.g. Visual Studio Code)
+- Clone/download this repository (cefaijoseph/Group4-Sensors).
+- Open the project directory in your preferred ID (e.g. Visual Studio Code).
 - Open CLI and run without inverted commas:
   - Windows:
   	- "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
   	- "npm install --global expo-cli"
   - Mac OS:
   	- "sudo npm install --global expo-cli"
-  	- Enter your Mac Password when prompted
+  	- Enter your Mac Password when prompted.
   - "npm install"
   - "expo start"
-- Download 'Expo Go' from PlayStore (Android) or AppStore (iOS)
-- Scan QR Code found in Terminal Window
+- Download 'Expo Go' from PlayStore (Android) or AppStore (iOS).
+- Scan QR Code found in Terminal Window.
 
 ## Dependencies
 For the application to work, the following dependencies are required (package.json is included, so running 'npm install' is sufficient):
