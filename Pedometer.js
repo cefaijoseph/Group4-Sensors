@@ -6,15 +6,12 @@ const PedometerScreen = () => {
     const [pastStepCount, setPastStepCount] = useState(0);
     const [currentStepCount, setCurrentStepCount] = useState(0);
     const [isPedometerAvailable, setIsPedometerAvailable] = useState(false);
-    const [hasPermission, setHasPermission] = useState(false);
 
     useEffect(() => {
         _subscribe();
-        return () => _unsubscribe();
     }, []);
 
     const _subscribe = async () => {
-
         await Pedometer.requestPermissionsAsync();
         Pedometer.watchStepCount(result => {
             setCurrentStepCount(result.steps)
@@ -45,12 +42,6 @@ const PedometerScreen = () => {
                 }
             );
         }
-    };
-
-    const _unsubscribe = () => {
-        setPastStepCount(0);
-        setCurrentStepCount(0);
-        setIsPedometerAvailable(false);
     };
 
     return (
