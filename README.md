@@ -10,7 +10,7 @@
 
 - **Anthony Zammit** - Presentation
 - **Elena Fomiceva** - Presentation
-- **Omar El Aida Chaffey** - Application Setup & Accelerometer
+- **Omar El Aida Chaffey** - Accelerometer & Magnetometer
 - **Oleg Grech** - Barometer
 - **Joseph Cefai** - Pedometer
 - **Andre Muscat** - Camera
