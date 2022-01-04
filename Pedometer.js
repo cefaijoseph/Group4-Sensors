@@ -6,7 +6,6 @@ const PedometerScreen = () => {
     const [pastStepCount, setPastStepCount] = useState(0);
     const [currentStepCount, setCurrentStepCount] = useState(0);
     const [isPedometerAvailable, setIsPedometerAvailable] = useState(false);
-    const [subscription, setSubscription] = useState(null);
 
     useEffect(() => {
         _subscribe();
@@ -44,8 +43,9 @@ const PedometerScreen = () => {
     };
 
     const _unsubscribe = () => {
-        subscription && subscription.remove();
-        setSubscription(null);
+        setPastStepCount(0);
+        setCurrentStepCount(0);
+        setIsPedometerAvailable(false);
     };
 
     return (
