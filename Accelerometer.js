@@ -1,8 +1,9 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, StatusBar, Text, View } from 'react-native';
 import { Accelerometer } from 'expo-sensors';
 
-const AccelerometerScreen = () => {
+function AccelerometerScreen() {
+
     const [data, setData] = useState({
         x: 0,
         y: 0,
@@ -34,11 +35,12 @@ const AccelerometerScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.AccelerometerContainer}>
-                <Text style={styles.text}>Accelerometer</Text>
+            <Text style={styles.text}>Accelerometer</Text>
                 <Text style={styles.textValues}>
                     <Text style={styles.text}>x: {x.toFixed(2)} y: {y.toFixed(2)} z: {z.toFixed(2)}</Text>
                 </Text>
-                <Text style={styles.text}>X Orientation: {(x) > 0.50 ? 'Vertical' : 'Horizontal'}</Text>
+                <Text style={styles.text}>X Orientation: {
+                    (x) > 0.50 ? 'Vertical' : 'Horizontal'}</Text>
                 <Text style={styles.text}>Y Orientation:
                     {Platform.OS === "ios"
                         ? ((y) < -0.50 ? 'Vertical' : 'Horizontal')

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, StatusBar, Text, View } from 'react-native';
 import { Pedometer } from 'expo-sensors';
 
