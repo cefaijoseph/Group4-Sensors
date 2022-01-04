@@ -56,9 +56,8 @@ const PedometerScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.PedometerContainer}>
-                <Text style={styles.text}>Permissions: {hasPermission ? 'Given' : 'Not given'}</Text>
                 <Text style={styles.text}>Pedometer connection: {isPedometerAvailable ? 'Connected' : 'Not connected'}</Text>
-                <Text style={styles.text}>Steps taken in the last 24 hours: {Platform.OS == "ios" ? pastStepCount : "Unavailable on android"}</Text>
+                {Platform.OS == "ios" && <Text style={styles.text}>Steps taken in the last 24 hours: {pastStepCount}</Text>}
                 <Text style={styles.text}>Walk! And watch this go up: {currentStepCount}</Text>
             </View>
         </View>
