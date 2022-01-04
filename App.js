@@ -6,12 +6,13 @@ import AccelerometerScreen from './Accelerometer';
 import BarometerScreen from './Barometer';
 import PedometerScreen from './Pedometer';
 import CameraScreen from './Camera';
+import { AutoFocus } from 'expo-camera/build/Camera.types';
 
 function HomeScreen({ navigation }) {
     return (
         <View style={styles.HomeContainer}>
             <Text style={styles.HomeText}>
-                Please select a sensor:
+                Please select a Sensor:
             </Text>
             <TouchableOpacity style={styles.Button}
                 onPress={() => navigation.navigate('Accelerometer')}>
@@ -20,10 +21,6 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity style={styles.Button}
                 onPress={() => navigation.navigate('Barometer')}>
                 <Text style={styles.ButtonText}>Barometer</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.Button}
-                onPress={() => navigation.navigate('Magnometer')}>
-                <Text style={styles.ButtonText}>Magnometer</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Button}
                 onPress={() => navigation.navigate('Pedometer')}>
@@ -55,6 +52,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
     HomeContainer: {
+        marginTop: 10,
         marginHorizontal: 20,
         flexDirection: "column",
     },
