@@ -18,16 +18,19 @@
 ## Installation / Setup Guide
 
 - Clone/download this repository (cefaijoseph/Group4-Sensors).
+- Make sure you have the LTS version of Node.js (Works on 16.13.1)
 - Open the project directory in your preferred ID (e.g. Visual Studio Code).
 - Open CLI and run without inverted commas:
   - Windows:
   	- "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
   	- "npm install --global expo-cli"
+  	- "npm install"
+  	- "expo start"
   - Mac OS:
   	- "sudo npm install --global expo-cli"
   	- Enter your Mac Password when prompted.
-  - "npm install"
-  - "expo start"
+  	- "npm install"
+  	- "expo start"
 - Download 'Expo Go' from PlayStore (Android) or AppStore (iOS).
 - Scan QR Code found in Terminal Window.
 
