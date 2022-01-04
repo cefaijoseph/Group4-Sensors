@@ -20,7 +20,7 @@
 - Clone/download this repository (cefaijoseph/Group4-Sensors)
 - Open the project directory in your preferred ID (e.g. Visual Studio Code)
 - Open CLI and run:
-  - (WindowsOnly) Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+  - (Windows Only) Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
   - npm install --global expo-cli
   - npm install
 - Download 'Expo Go' from PlayStore (Android) or AppStore (iOS)
