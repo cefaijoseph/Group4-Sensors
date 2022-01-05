@@ -3,30 +3,36 @@ import { StyleSheet, StatusBar, Text, View, Platform } from 'react-native';
 import { Pedometer } from 'expo-sensors';
 
 const PedometerScreen = () => {
+
+    const [isPedometerAvailable, setIsPedometerAvailable] = useState(false);
     const [pastStepCount, setPastStepCount] = useState(0);
     const [currentStepCount, setCurrentStepCount] = useState(0);
-    const [isPedometerAvailable, setIsPedometerAvailable] = useState(false);
+     var _subscription;
+    
 
     useEffect(() => {
-        _subscribe();
+         _subscribe();
+         return() => _unsubscribe();
     }, []);
 
     const _subscribe = async () => {
         await Pedometer.requestPermissionsAsync();
-        Pedometer.watchStepCount(result => {
-            setCurrentStepCount(result.steps)
-        }),
-            Pedometer.isAvailableAsync().then(
-                result => {
-                    setIsPedometerAvailable(result)
-                },
-                error => {
-                    this.setState({
-                        isPedometerAvailable: 'Could not get isPedometerAvailable: ' + error,
-                    });
-                }
-            )
 
+        Pedometer.isAvailableAsync().then(
+            result => {
+                setIsPedometerAvailable(result)
+            },
+            error => {
+                this.setState({
+                    isPedometerAvailable: 'Could not get isPedometerAvailable: ' + error,
+                });
+            }
+        );
+
+        _subscription = Pedometer.watchStepCount(result => {
+            setCurrentStepCount(result.steps)
+        });
+        
         if (Platform.OS == "ios") {
             const end = new Date();
             const start = new Date();
@@ -43,6 +49,10 @@ const PedometerScreen = () => {
             );
         }
     };
+
+    const _unsubscribe = () => {
+        _subscription && _subscription.remove();
+    }
 
     return (
         <View style={styles.container}>
