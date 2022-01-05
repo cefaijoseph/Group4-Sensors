@@ -32,6 +32,7 @@
   	- "npm install"
   	- "expo start"
 - Download 'Expo' from PlayStore (Android) or AppStore (iOS).
+- Make sure you are on the same network on both devices.
 - Scan QR Code found in Terminal Window.
 
 ## Dependencies
