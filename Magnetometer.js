@@ -5,42 +5,44 @@ import { StatusBar } from 'expo-status-bar';
 
 function MagnetometerScreen() {
 
-    const [data, setData] = useState({
-        x: 0,
-        y: 0,
-        z: 0,
-    });
-    const [subscription, setSubscription] = useState(null);
+    // const [data, setData] = useState({
+    //     x: 0,
+    //     y: 0,
+    //     z: 0,
+    // });
 
-    const _subscribe = () => {
-        setSubscription(
-            Magnetometer.addListener(result => {
-                setData(result);
-            })
-        );
-    };
+    // const [subscription, setSubscription] = useState(null);
 
-    const _unsubscribe = () => {
-        subscription && subscription.remove();
-        setSubscription(null);
-    };
+    // const _subscribe = () => {
+    //     setSubscription(
+    //         Magnetometer.addListener(result => {
+    //             setData(result);
+    //         })
+    //     );
+    // };
 
-    useEffect(() => {
-        _subscribe();
-        return () => _unsubscribe();
-    }, []);
+    // const _unsubscribe = () => {
+    //     subscription && subscription.remove();
+    //     setSubscription(null);
+    // };
 
-    const { x, y, z } = data;
+    // useEffect(() => {
+    //     _subscribe();
+    //     return () => _unsubscribe();
+    // }, []);
+
+    // const { x, y, z } = data;
+
     return (
         <View style={styles.container}>
-            <View style={styles.MagnetometerContainer}>
+            {/* <View style={styles.MagnetometerContainer}>
                 <Text style={styles.text}>Magnetometer:</Text>
                 <Text style={styles.text}>
                     x: {x.toFixed(2)} y: {y.toFixed(2)} z: {z.toFixed(2)}
                 </Text>
                 <View style={styles.buttonContainer}>
                 </View>
-            </View>
+            </View> */}
         </View>
     );
 }
