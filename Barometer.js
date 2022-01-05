@@ -4,44 +4,44 @@ import { Barometer } from "expo-sensors";
 const BarometerScreen = () => {
   const [data, setData] = useState({});
 
-  useEffect(() => {
-    if (this._subscription) {
-      _unsubscribe();
-    } else {
-      _subscribe();
-    }
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      _unsubscribe();
-    };
-  }, []);
-
-  const _subscribe = () => {
-    this._subscription = Barometer.addListener((barometerData) => {
-      setData(barometerData);
-    });
-  };
-
-  const _unsubscribe = () => {
-    this._subscription && this._subscription.remove();
-    this._subscription = null;
-  };
-
   const { pressure = 0, relativeAltitude = 0 } = data;
+
+  // useEffect(() => {
+  //   if (this._subscription) {
+  //     _unsubscribe();
+  //   } else {
+  //     _subscribe();
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   return () => {
+  //     _unsubscribe();
+  //   };
+  // }, []);
+
+  // const _subscribe = () => {
+  //   this._subscription = Barometer.addListener((barometerData) => {
+  //     setData(barometerData);
+  //   });
+  // };
+
+  // const _unsubscribe = () => {
+  //   this._subscription && this._subscription.remove();
+  //   this._subscription = null;
+  // };
 
   return (
     <View style={styles.container}>
       <View style={styles.BarometerContainer}>
-        <Text style={styles.text}>Barometer:</Text>
+        {/* <Text style={styles.text}>Barometer:</Text>
         <Text style={styles.text}>Pressure: {pressure * 100} Pa</Text>
         <Text style={styles.text}>
           Relative Altitude:{" "}
           {Platform.OS === "ios"
             ? `${relativeAltitude} m`
             : `Only available on iOS`}
-        </Text>
+        </Text> */}
       </View>
     </View>
   );
