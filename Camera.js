@@ -5,10 +5,10 @@ import * as MediaLibrary from 'expo-media-library';
 
 
 export default function App() {
-  const [hasPermission, setHasPermission] = useState();
-  const [status, requestPermission] = MediaLibrary.usePermissions();
-  const [type, setType] = useState(Camera.Constants.Type.back);
-  const cameraRef = useRef(null)
+  // const [hasPermission, setHasPermission] = useState();
+  // const [status, requestPermission] = MediaLibrary.usePermissions();
+  // const [type, setType] = useState(Camera.Constants.Type.back);
+  // const cameraRef = useRef(null)
   const styles = StyleSheet.create({
     container: {
 
@@ -62,47 +62,43 @@ export default function App() {
 
   })
 
-  //request premission to use camera
-  useEffect(() => {
-    (async () => {
-      const { camerastatus } = await Camera.requestCameraPermissionsAsync();
+  //request premission to use camera & storage
+  // useEffect(() => {
+  //   (async () => {
+  //     const { camerastatus } = await Camera.requestCameraPermissionsAsync();
 
-      setHasPermission(camerastatus === 'granted');
+  //     setHasPermission(camerastatus === 'granted');
 
-    })();
-  }, []);
+      
+  //     const { mediastatus } = await MediaLibrary.requestPermissionsAsync();
 
-  //request premission to use storage
-  useEffect(() => {
-    (async () => {
+  //     requestPermission(mediastatus === 'granted');
 
-      const { mediastatus } = await MediaLibrary.requestPermissionsAsync();
+  //   })();
+  // }, []);
 
-      requestPermission(mediastatus === 'granted');
-    })();
-  }, []);
 
 //takes picture
-  const takePicture = async () => {
-    if (cameraRef) {
-      const options = { quality: 1, base64: true };
-      const data = await cameraRef.current.takePictureAsync(options);
-      //saves to gallery
-      MediaLibrary.saveToLibraryAsync(data.uri);
-    }
-  };
+  // const takePicture = async () => {
+  //   if (cameraRef) {
+  //     const options = { quality: 1, base64: true };
+  //     const data = await cameraRef.current.takePictureAsync(options);
+  //     //saves to gallery
+  //     MediaLibrary.saveToLibraryAsync(data.uri);
+  //   }
+  // };
 
 
-  if (hasPermission && status === null) {
-    return <View />;
-  }
-  if (hasPermission && status === false) {
-    return <Text>No access to camera</Text>;
-  }
+  // if (hasPermission && status === null) {
+  //   return <View />;
+  // }
+  // if (hasPermission && status === false) {
+  //   return <Text>No access to camera</Text>;
+  // }
   return (
     <View style={styles.container}>
 
-      <Camera style={styles.cam} type={type} ref={cameraRef}>
+      {/* <Camera style={styles.cam} type={type} ref={cameraRef}>
 
         <View style={styles.buttonContainerFlip}>
           <TouchableOpacity
@@ -125,7 +121,7 @@ export default function App() {
         </View>
 
 
-      </Camera >
+      </Camera > */}
     </View >
   );
 
