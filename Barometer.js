@@ -5,7 +5,11 @@ const BarometerScreen = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    _toggle();
+    if (this._subscription) {
+      _unsubscribe();
+    } else {
+      _subscribe();
+    }
   }, []);
 
   useEffect(() => {
@@ -13,14 +17,6 @@ const BarometerScreen = () => {
       _unsubscribe();
     };
   }, []);
-
-  const _toggle = () => {
-    if (this._subscription) {
-      _unsubscribe();
-    } else {
-      _subscribe();
-    }
-  };
 
   const _subscribe = () => {
     this._subscription = Barometer.addListener((barometerData) => {
