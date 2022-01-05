@@ -31,7 +31,7 @@
   	- Enter your Mac Password when prompted.
   	- "npm install"
   	- "expo start"
-- Download 'Expo Go' from PlayStore (Android) or AppStore (iOS).
+- Download 'Expo' from PlayStore (Android) or AppStore (iOS).
 - Scan QR Code found in Terminal Window.
 
 ## Dependencies
