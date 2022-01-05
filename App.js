@@ -20,12 +20,12 @@ function HomeScreen({ navigation }) {
                 <Text style={styles.ButtonText}>Accelerometer</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Button}
-                onPress={() => navigation.navigate('Barometer')}>
-                <Text style={styles.ButtonText}>Barometer</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.Button}
                 onPress={() => navigation.navigate('Magnetometer')}>
                 <Text style={styles.ButtonText}>Magnetometer</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.Button}
+                onPress={() => navigation.navigate('Barometer')}>
+                <Text style={styles.ButtonText}>Barometer</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Button}
                 onPress={() => navigation.navigate('Pedometer')}>
